@@ -4,7 +4,7 @@ export const GetIp = async (setIp, setErr) => {
     const res = await axios.get("https://api.ipify.org/?format=json");
     setIp(res.data.ip);
   } catch (error) {
-    setErr(error);
+    setErr(true);
     console.log(error);
   }
 };
