@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { GetData } from "../api/getData";
 import { GetIp } from "../api/getIp";
-
+import Details from "../components/details";
 const Screen1 = () => {
   const [ip, setIp] = useState();
   const [err, setErr] = useState(false);
@@ -16,10 +16,10 @@ const Screen1 = () => {
   return (
     <div>
       {data ? (
-        <h1>
-          Here is your ip address: {ip} <br /> located at {data.location.name}{" "}
-          in {data.location.region}
-        </h1>
+        <>
+          <h2>{ip}</h2>
+          <Details {...data} />
+        </>
       ) : err ? (
         <h1>Sorry error occured</h1>
       ) : (
