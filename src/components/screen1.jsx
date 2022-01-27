@@ -1,32 +1,16 @@
-import React, { useEffect, useState } from "react";
-import { GetData } from "../api/getData";
-import { GetIp } from "../api/getIp";
-import Details from "../components/details";
-const Screen1 = () => {
-  const [ip, setIp] = useState();
-  const [err, setErr] = useState(false);
-  const [data, setData] = useState();
-  useEffect(() => {
-    GetIp(setIp, setErr);
-    if (ip) {
-      setErr(false);
-      GetData(ip, setData, setErr);
-    }
-  }, [ip]);
+import React from "react";
+
+const Icon = () => {
   return (
-    <div>
-      {data ? (
-        <>
-          <h2>{ip}</h2>
-          <Details {...data} />
-        </>
-      ) : err ? (
-        <h1>Sorry error occured</h1>
-      ) : (
-        <h3>Loading...</h3>
-      )}
+    <div className="mIcn">
+      <lord-icon
+        src="https://cdn.lordicon.com/zzcjjxew.json"
+        trigger="loop"
+        delay="1500"
+        colors="primary:#242424,secondary:#e75757"
+        style={{ width: "300px", height: "300px" }}
+      ></lord-icon>
     </div>
   );
 };
-
-export default Screen1;
+export default Icon;

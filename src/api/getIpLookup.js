@@ -1,10 +1,10 @@
 import axios from "axios";
-export const GetIp = async (setData, setErr) => {
+export const GetIpLookup = async (ip, setData, setErr) => {
   var options = {
     method: "GET",
     url:
       "https://find-any-ip-address-or-domain-location-world-wide.p.rapidapi.com/iplocation",
-    params: { apikey: "873dbe322aea47f89dcf729dcc8f60e8" },
+    params: { ip: ip, apikey: "873dbe322aea47f89dcf729dcc8f60e8" },
     headers: {
       "x-rapidapi-host":
         "find-any-ip-address-or-domain-location-world-wide.p.rapidapi.com",
@@ -14,6 +14,7 @@ export const GetIp = async (setData, setErr) => {
   try {
     const res = await axios.request(options);
     setData(res.data);
+    console.log(res.data);
   } catch (error) {
     setErr(true);
     console.log(error);
