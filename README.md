@@ -1,2 +1,4 @@
 # Ip-Locator
-Created with CodeSandbox
+Ip Locator provides geo data based on IP address.
+
+#### [Try Here](https://iplocator.vercel.app/)
