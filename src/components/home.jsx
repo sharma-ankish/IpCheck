@@ -25,7 +25,7 @@ const Home = () => {
           <p className="m-3 p-2 text-center bg-danger rounded text-light">
             Sorry an error occured <br />
             <small>
-              Maybe the ip address you are tryning to access is blocked
+              Maybe the ip address you are trying to access is private
             </small>
           </p>
         ) : (

@@ -16,6 +16,7 @@ export const GetIpLookup = async (ip, setData, setErr) => {
     setData(res.data);
   } catch (error) {
     setErr(true);
+    setData();
     console.log(error);
   }
 };
