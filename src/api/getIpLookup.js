@@ -14,7 +14,6 @@ export const GetIpLookup = async (ip, setData, setErr) => {
   try {
     const res = await axios.request(options);
     setData(res.data);
-    console.log(res.data);
   } catch (error) {
     setErr(true);
     console.log(error);
